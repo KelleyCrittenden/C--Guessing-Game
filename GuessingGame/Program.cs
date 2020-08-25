@@ -11,11 +11,43 @@ namespace GuessingGame
 
             int numberOfAttempts = 0;
 
+            int attemptsAvailable = 0;
+
+            bool difficultyLevel = false;
+
+            while (!difficultyLevel)
+            {
+
+                Console.WriteLine("Choose a level of Difficulty? Easy, Medium, Hard or Cheater");
+                string difficultyLevelChosen = Console.ReadLine();
+
+                if (difficultyLevelChosen == "Easy")
+                {
+                    attemptsAvailable = 8;
+                    difficultyLevel = true;
+                }
+                else if (difficultyLevelChosen == "Medium")
+                {
+                    attemptsAvailable = 6;
+                    difficultyLevel = true;
+                }
+                else if (difficultyLevelChosen == "Hard")
+                {
+                    attemptsAvailable = 4;
+                    difficultyLevel = true;
+                }
+                // else if (difficultyLevelChosen == "Cheater")
+                // {
+                //     attemptsAvailable = ;
+                //     difficultyLevel = true;
+                // }
+            }
+
             Console.WriteLine($"Can you guess the secret number? >>");
 
-            while (numberOfAttempts < 4)
+            while (numberOfAttempts < attemptsAvailable)
             {
-                Console.WriteLine($"Attempts Remaining: {4 - numberOfAttempts}.");
+                Console.WriteLine($"Attempts Remaining: {attemptsAvailable - numberOfAttempts}.");
 
                 int numberGuess = Int32.Parse(Console.ReadLine());
 
