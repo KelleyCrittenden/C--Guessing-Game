@@ -7,7 +7,7 @@ namespace GuessingGame
         static void Main(string[] args)
         {
 
-            string secretNumber = "42";
+            int secretNumber = new Random().Next(1, 101);
 
             int numberOfAttempts = 0;
 
@@ -15,9 +15,9 @@ namespace GuessingGame
 
             while (numberOfAttempts < 4)
             {
-                Console.WriteLine($"You have guessed {numberOfAttempts} time[s].");
+                Console.WriteLine($"You have {4 - numberOfAttempts} guesses left .");
 
-                string numberGuess = Console.ReadLine();
+                int numberGuess = Int32.Parse(Console.ReadLine());
 
                 if (numberGuess == secretNumber)
                 {
