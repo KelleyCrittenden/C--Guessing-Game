@@ -6,6 +6,7 @@ namespace GuessingGame
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"Can you guess the secret number?");
 
             int secretNumber = new Random().Next(1, 101);
 
@@ -36,18 +37,16 @@ namespace GuessingGame
                     attemptsAvailable = 4;
                     difficultyLevel = true;
                 }
-                // else if (difficultyLevelChosen == "Cheater")
-                // {
-                //     attemptsAvailable = ;
-                //     difficultyLevel = true;
-                // }
+                else if (difficultyLevelChosen == "Cheater")
+                {
+                    attemptsAvailable = int.MaxValue;
+                    difficultyLevel = true;
+                }
             }
-
-            Console.WriteLine($"Can you guess the secret number? >>");
 
             while (numberOfAttempts < attemptsAvailable)
             {
-                Console.WriteLine($"Attempts Remaining: {attemptsAvailable - numberOfAttempts}.");
+                Console.WriteLine($"Attempts Remaining: {attemptsAvailable - numberOfAttempts}");
 
                 int numberGuess = Int32.Parse(Console.ReadLine());
 
